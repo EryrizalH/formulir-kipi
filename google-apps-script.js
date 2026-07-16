@@ -3,6 +3,8 @@
   GOOGLE APPS SCRIPT: SIMPAN DATA FORMULIR KE GOOGLE SHEETS
   ========================================================================
   
+  URL GitHub Pages: https://eryrizalh.github.io/formulir-kipi/
+  
   Cara Penggunaan:
   1. Buka Google Sheets baru.
   2. Klik Ekstensi -> Apps Script.
