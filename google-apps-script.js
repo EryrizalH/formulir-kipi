@@ -22,6 +22,12 @@
 
 function doPost(e) {
   try {
+    // Ponytail: check if executed manually from editor
+    if (!e || !e.postData || !e.postData.contents) {
+      return ContentService.createTextOutput(JSON.stringify({ "status": "error", "message": "Manual run detected. Please submit via web form." }))
+                           .setMimeType(ContentService.MimeType.JSON);
+    }
+
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     var data = JSON.parse(e.postData.contents);
     
