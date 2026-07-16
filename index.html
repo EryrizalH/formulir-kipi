@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Investigasi KIPI Vaksin LSD</title>
+  <meta name="description" content="Formulir Investigasi Kejadian Ikutan Pasca Imunisasi (KIPI) Vaksin LSD - Dinas Peternakan dan Kesehatan Hewan">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <!-- Header -->
+    <header class="form-header">
+      <div class="header-icon">🐄</div>
+      <h1>Formulir Investigasi Kejadian Ikutan Pasca Imunisasi (KIPI)</h1>
+      <p class="subtitle">Vaksin <em>Lumpy Skin Disease</em> (LSD)</p>
+      <div class="header-badge">Formulir Resmi Investigasi</div>
+    </header>
+
+    <form id="kipiForm" novalidate>
+
+      <!-- Section I -->
+      <section class="form-section" id="section-1">
+        <div class="section-header">
+          <span class="section-number">I</span>
+          <h2>Informasi Umum Investigasi</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="tgl_laporan">Tanggal Laporan Diterima <span class="req">*</span></label>
+              <input type="date" id="tgl_laporan" name="tgl_laporan" required>
+            </div>
+            <div class="field-group">
+              <label for="tgl_investigasi">Tanggal Investigasi Lapangan <span class="req">*</span></label>
+              <input type="date" id="tgl_investigasi" name="tgl_investigasi" required>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="nama_petugas">Nama Petugas Pemeriksa / Keswan <span class="req">*</span></label>
+            <input type="text" id="nama_petugas" name="nama_petugas" placeholder="Masukkan nama petugas" required>
+          </div>
+          <div class="field-group">
+            <label for="instansi">Instansi / Dinas Keswan Wilayah <span class="req">*</span></label>
+            <input type="text" id="instansi" name="instansi" placeholder="Masukkan instansi/dinas" required>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section II -->
+      <section class="form-section" id="section-2">
+        <div class="section-header">
+          <span class="section-number">II</span>
+          <h2>Profil Peternakan & Identitas Ternak</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-group">
+            <label for="nama_pemilik">Nama Pemilik / Peternakan <span class="req">*</span></label>
+            <input type="text" id="nama_pemilik" name="nama_pemilik" placeholder="Masukkan nama pemilik/peternakan" required>
+          </div>
+
+          <fieldset class="address-fieldset">
+            <legend>Alamat Lengkap Kandang</legend>
+            <div class="field-row four-col">
+              <div class="field-group">
+                <label for="rt_rw">RT/RW</label>
+                <input type="text" id="rt_rw" name="rt_rw" placeholder="Cth: 03/05">
+              </div>
+              <div class="field-group">
+                <label for="desa">Desa / Kelurahan</label>
+                <input type="text" id="desa" name="desa" placeholder="Nama desa">
+              </div>
+              <div class="field-group">
+                <label for="kecamatan">Kecamatan</label>
+                <input type="text" id="kecamatan" name="kecamatan" placeholder="Nama kecamatan">
+              </div>
+              <div class="field-group">
+                <label for="provinsi">Provinsi</label>
+                <input type="text" id="provinsi" name="provinsi" placeholder="Nama provinsi">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Jenis/Bangsa Sapi -->
+          <fieldset class="cattle-type-fieldset">
+            <legend>Jenis / Bangsa Sapi <span class="req">*</span></legend>
+            <div class="field-row two-col">
+              <div class="cattle-card">
+                <h4>🥛 Sapi Perah</h4>
+                <div class="checkbox-group">
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Friesian Holstein (FH)"> Friesian Holstein (FH)</label>
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Peranakan FH"> Peranakan FH</label>
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Jersey"> Jersey</label>
+                  <label class="check-label other-label">
+                    <input type="checkbox" name="jenis_sapi" value="Sapi Perah Lainnya" id="chk_perah_lain">
+                    Lainnya:
+                    <input type="text" class="inline-input" id="perah_lainnya" name="perah_lainnya" placeholder="Sebutkan..." disabled>
+                  </label>
+                </div>
+              </div>
+              <div class="cattle-card">
+                <h4>🥩 Sapi Potong</h4>
+                <div class="checkbox-group">
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Simmental"> Simmental</label>
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Limosin"> Limosin</label>
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="PO"> PO</label>
+                  <label class="check-label"><input type="checkbox" name="jenis_sapi" value="Bali"> Bali</label>
+                  <label class="check-label other-label">
+                    <input type="checkbox" name="jenis_sapi" value="Sapi Potong Lainnya" id="chk_potong_lain">
+                    Lainnya:
+                    <input type="text" class="inline-input" id="potong_lainnya" name="potong_lainnya" placeholder="Sebutkan..." disabled>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="field-row three-col">
+            <div class="field-group">
+              <label for="umur_ternak">Umur Ternak</label>
+              <input type="text" id="umur_ternak" name="umur_ternak" placeholder="Cth: 2 tahun">
+            </div>
+            <div class="field-group">
+              <label for="jenis_kelamin">Jenis Kelamin <span class="req">*</span></label>
+              <select id="jenis_kelamin" name="jenis_kelamin" required>
+                <option value="">-- Pilih --</option>
+                <option value="Jantan">Jantan</option>
+                <option value="Betina">Betina</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="populasi">Populasi / Kandang</label>
+              <input type="number" id="populasi" name="populasi" placeholder="Jumlah ekor" min="0">
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="eartag">Nomor Tag Telinga (Eartag) Sapi Sakit</label>
+              <input type="text" id="eartag" name="eartag" placeholder="Nomor eartag">
+            </div>
+            <div class="field-group">
+              <label for="kategori_umur">Kategori Umur Hewan Terkena Dampak (Bulan)</label>
+              <input type="number" id="kategori_umur" name="kategori_umur" placeholder="Umur dalam bulan" min="0">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section III -->
+      <section class="form-section" id="section-3">
+        <div class="section-header">
+          <span class="section-number">III</span>
+          <h2>Data Logistik Vaksinasi (Lacak Batch)</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-group">
+            <label for="tgl_vaksinasi">Tanggal Pelaksanaan Vaksinasi <span class="req">*</span></label>
+            <input type="date" id="tgl_vaksinasi" name="tgl_vaksinasi" required>
+          </div>
+          <div class="field-group">
+            <label for="nama_produk">Nama Produk (Merek Vaksin) <span class="req">*</span></label>
+            <input type="text" id="nama_produk" name="nama_produk" placeholder="Masukkan nama/merek vaksin" required>
+          </div>
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="no_batch">Nomor Batch / Lot Vaksin <span class="req">*</span>
+                <span class="hint">(Wajib Diisi/Difoto)</span>
+              </label>
+              <input type="text" id="no_batch" name="no_batch" placeholder="Nomor batch vaksin" required>
+            </div>
+            <div class="field-group">
+              <label for="no_batch_diluent">Nomor Batch Pelarut (Diluent)</label>
+              <input type="text" id="no_batch_diluent" name="no_batch_diluent" placeholder="Nomor batch pelarut">
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Kondisi Penyimpanan Rantai Dingin di Lapangan <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="rantai_dingin" value="Baik (2-8°C)" required>
+                <span class="radio-custom"></span>
+                Baik (2-8°C)
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="rantai_dingin" value="Suhu Kamar/Terpapar Panas">
+                <span class="radio-custom"></span>
+                Suhu Kamar / Terpapar Panas
+              </label>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="rentang_onset">Rentang Waktu antara Vaksinasi hingga Onset Gejala (Hari)</label>
+            <input type="number" id="rentang_onset" name="rentang_onset" placeholder="Jumlah hari" min="0">
+          </div>
+        </div>
+      </section>
+
+      <!-- Section IV -->
+      <section class="form-section" id="section-4">
+        <div class="section-header">
+          <span class="section-number">IV</span>
+          <h2>Rekam Gejala Klinis & Kronologis</h2>
+        </div>
+        <p class="section-note">Centang yang sesuai, bisa lebih dari satu</p>
+        <div class="section-body">
+
+          <fieldset class="symptom-fieldset">
+            <legend>Gejala Umum</legend>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="gejala_umum" value="Demam tinggi / pyrexia"> Demam tinggi / pyrexia</label>
+              <label class="check-label"><input type="checkbox" name="gejala_umum" value="Nafsu makan turun"> Nafsu makan turun</label>
+              <label class="check-label"><input type="checkbox" name="gejala_umum" value="Nafas tersengal"> Nafas tersengal</label>
+              <label class="check-label"><input type="checkbox" name="gejala_umum" value="Hipersalivasi"> Hipersalivasi</label>
+              <label class="check-label other-label">
+                <input type="checkbox" name="gejala_umum" value="Gejala umum lainnya" id="chk_gejala_umum_lain">
+                Gejala lain:
+                <input type="text" class="inline-input" id="gejala_umum_lainnya" name="gejala_umum_lainnya" placeholder="Sebutkan..." disabled>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="symptom-fieldset">
+            <legend>Gejala Pencernaan</legend>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="gejala_pencernaan" value="Diare Cair Profus"> Diare Cair Profus (Sangat hebat/menyemprot)</label>
+              <label class="check-label"><input type="checkbox" name="gejala_pencernaan" value="Diare Bercampur Darah / Dysentery"> Diare Bercampur Darah Segar / Gumpalan Darah (Dysentery)</label>
+              <label class="check-label"><input type="checkbox" name="gejala_pencernaan" value="Feses Hitam Pekat / Melena"> Feses Hitam Pekat Lengket (Melena)</label>
+              <label class="check-label other-label">
+                <input type="checkbox" name="gejala_pencernaan" value="Gejala pencernaan lainnya" id="chk_gejala_cerna_lain">
+                Gejala lain:
+                <input type="text" class="inline-input" id="gejala_pencernaan_lainnya" name="gejala_pencernaan_lainnya" placeholder="Sebutkan..." disabled>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="symptom-fieldset">
+            <legend>Gejala Sistemik & Kulit</legend>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="gejala_kulit" value="Reaksi Neethling (nodul LSD)"> Reaksi Neethling (Muncul benjolan kecil/nodul LSD di seluruh kulit)</label>
+              <label class="check-label"><input type="checkbox" name="gejala_kulit" value="Pembengkakan Hebat di Lokasi Suntikan"> Pembengkakan Hebat di Lokasi Suntikan (Subkutan Leher)</label>
+              <label class="check-label"><input type="checkbox" name="gejala_kulit" value="Kelemahan Akut / Ambruk / Recumbency"> Kelemahan Akut / Ambruk / Recumbency</label>
+              <label class="check-label other-label">
+                <input type="checkbox" name="gejala_kulit" value="Gejala kulit lainnya" id="chk_gejala_kulit_lain">
+                Gejala lain:
+                <input type="text" class="inline-input" id="gejala_kulit_lainnya" name="gejala_kulit_lainnya" placeholder="Sebutkan..." disabled>
+              </label>
+              <label class="check-label"><input type="checkbox" name="gejala_kulit" value="Tidak ada gejala kulit"> Tidak ada gejala kulit</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="symptom-fieldset status-fieldset">
+            <legend>Status Akhir Hewan (Per Tanggal Investigasi) <span class="req">*</span></legend>
+            <div class="radio-group vertical">
+              <label class="radio-label">
+                <input type="radio" name="status_akhir" value="Sakit Parah / Kritis" required>
+                <span class="radio-custom"></span>
+                Sakit Parah / Kritis
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="status_akhir" value="Mati Mendadak" id="radio_mati">
+                <span class="radio-custom"></span>
+                Mati Mendadak
+              </label>
+              <div class="conditional-field" id="tgl_kematian_wrapper" style="display:none;">
+                <label for="tgl_kematian">Tanggal Kematian:</label>
+                <input type="date" id="tgl_kematian" name="tgl_kematian">
+              </div>
+              <label class="radio-label">
+                <input type="radio" name="status_akhir" value="Dipotong Paksa">
+                <span class="radio-custom"></span>
+                Dipotong Paksa
+              </label>
+            </div>
+          </fieldset>
+
+        </div>
+      </section>
+
+      <!-- Section V -->
+      <section class="form-section" id="section-5">
+        <div class="section-header">
+          <span class="section-number">V</span>
+          <h2>Riwayat Pengobatan Pascavaksinasi (Audit Medikasi)</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-group">
+            <label>Apakah ternak diberikan obat oleh petugas keswan dalam 1–5 hari terakhir sebelum diare berdarah muncul? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="diberi_obat" value="Ya" id="radio_obat_ya" required>
+                <span class="radio-custom"></span>
+                Ya
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="diberi_obat" value="Tidak" id="radio_obat_tidak">
+                <span class="radio-custom"></span>
+                Tidak
+              </label>
+            </div>
+          </div>
+
+          <div id="obat-detail" class="conditional-section" style="display:none;">
+            <h4 class="sub-heading">Detail Obat yang Diberikan</h4>
+
+            <div id="obat-list">
+              <div class="obat-entry">
+                <div class="field-row three-col">
+                  <div class="field-group">
+                    <label>Merk / Nama Obat</label>
+                    <input type="text" name="obat_nama_1" placeholder="Nama obat">
+                  </div>
+                  <div class="field-group">
+                    <label>Dosis (mL)</label>
+                    <input type="text" name="obat_dosis_1" placeholder="mL">
+                  </div>
+                  <div class="field-group">
+                    <label>Frekuensi (kali)</label>
+                    <input type="text" name="obat_frekuensi_1" placeholder="kali">
+                  </div>
+                </div>
+              </div>
+              <div class="obat-entry">
+                <div class="field-row three-col">
+                  <div class="field-group">
+                    <label>Merk / Nama Obat</label>
+                    <input type="text" name="obat_nama_2" placeholder="Nama obat">
+                  </div>
+                  <div class="field-group">
+                    <label>Dosis (mL)</label>
+                    <input type="text" name="obat_dosis_2" placeholder="mL">
+                  </div>
+                  <div class="field-group">
+                    <label>Frekuensi (kali)</label>
+                    <input type="text" name="obat_frekuensi_2" placeholder="kali">
+                  </div>
+                </div>
+              </div>
+              <div class="obat-entry">
+                <div class="field-row three-col">
+                  <div class="field-group">
+                    <label>Merk / Nama Obat</label>
+                    <input type="text" name="obat_nama_3" placeholder="Nama obat">
+                  </div>
+                  <div class="field-group">
+                    <label>Dosis (mL)</label>
+                    <input type="text" name="obat_dosis_3" placeholder="mL">
+                  </div>
+                  <div class="field-group">
+                    <label>Frekuensi (kali)</label>
+                    <input type="text" name="obat_frekuensi_3" placeholder="kali">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="vitamin_lain">Vitamin / Lainnya</label>
+              <input type="text" id="vitamin_lain" name="vitamin_lain" placeholder="Vitamin atau suplemen lainnya">
+            </div>
+            <div class="field-group">
+              <label for="pengobatan_lain">Pengobatan Lainnya</label>
+              <div class="field-row three-col">
+                <div class="field-group">
+                  <input type="text" id="pengobatan_lain" name="pengobatan_lain" placeholder="Sebutkan pengobatan">
+                </div>
+                <div class="field-group">
+                  <label>Dosis (mL)</label>
+                  <input type="text" name="pengobatan_lain_dosis" placeholder="mL">
+                </div>
+                <div class="field-group">
+                  <label>Frekuensi (kali)</label>
+                  <input type="text" name="pengobatan_lain_frekuensi" placeholder="kali">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section VI -->
+      <section class="form-section" id="section-6">
+        <div class="section-header">
+          <span class="section-number">VI</span>
+          <h2>Tindakan Diagnostik & Sampel Laboratorium</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-group">
+            <label>Apakah dilakukan Bedah Bangkai (Nekropsi) pada sapi yang mati? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="nekropsi" value="Ya" id="radio_nekropsi_ya" required>
+                <span class="radio-custom"></span>
+                Ya
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="nekropsi" value="Tidak" id="radio_nekropsi_tidak">
+                <span class="radio-custom"></span>
+                Tidak
+              </label>
+            </div>
+          </div>
+
+          <div id="nekropsi-detail" class="conditional-section" style="display:none;">
+            <fieldset class="symptom-fieldset">
+              <legend>Temuan Makropatologi Utama</legend>
+              <div class="checkbox-group">
+                <label class="check-label"><input type="checkbox" name="temuan_nekropsi" value="Erosi/Ulkus/Luka berdarah pada Abomasum"> Erosi/Ulkus/Luka berdarah pada Abomasum</label>
+                <label class="check-label"><input type="checkbox" name="temuan_nekropsi" value="Perdarahan/Enteritis Hemoragika pada Usus"> Perdarahan/Enteritis Hemoragika pada Usus Halus/Usus Besar</label>
+                <label class="check-label"><input type="checkbox" name="temuan_nekropsi" value="Tidak ditemukan kelainan organ dalam"> Tidak ditemukan kelainan organ dalam</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <fieldset class="symptom-fieldset">
+            <legend>Sampel yang Diambil dan Dikirim ke Laboratorium Rujukan</legend>
+            <p class="fieldset-note">Bisa memilih lebih dari satu</p>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="sampel" value="Sampel Feses"> Sampel Feses</label>
+              <label class="check-label"><input type="checkbox" name="sampel" value="Serum"> Serum</label>
+              <label class="check-label"><input type="checkbox" name="sampel" value="Darah"> Darah</label>
+              <label class="check-label"><input type="checkbox" name="sampel" value="Swab hidung"> Swab hidung</label>
+              <label class="check-label"><input type="checkbox" name="sampel" value="Swab mulut"> Swab mulut</label>
+              <label class="check-label other-label">
+                <input type="checkbox" name="sampel" value="Sampel lainnya" id="chk_sampel_lain">
+                Lainnya:
+                <input type="text" class="inline-input" id="sampel_lainnya" name="sampel_lainnya" placeholder="Sebutkan..." disabled>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <!-- Section VII -->
+      <section class="form-section" id="section-7">
+        <div class="section-header">
+          <span class="section-number">VII</span>
+          <h2>Kesimpulan Awal & Rekomendasi Petugas Lapangan</h2>
+        </div>
+        <div class="section-body">
+          <div class="field-group">
+            <label for="kesimpulan">Kesimpulan Awal & Rekomendasi <span class="req">*</span></label>
+            <textarea id="kesimpulan" name="kesimpulan" rows="6" placeholder="Tuliskan kesimpulan awal dan rekomendasi berdasarkan hasil investigasi lapangan..." required></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit -->
+      <div class="form-actions">
+        <button type="submit" class="btn-submit" id="btnSubmit">
+          <span class="btn-text">Kirim Formulir</span>
+          <span class="btn-loading" style="display:none;">
+            <span class="spinner"></span> Mengirim...
+          </span>
+        </button>
+        <button type="button" class="btn-clear" id="btnClear">Hapus Semua Jawaban</button>
+      </div>
+    </form>
+
+    <!-- Success modal -->
+    <div class="modal-overlay" id="successModal" style="display:none;">
+      <div class="modal">
+        <div class="modal-icon">✅</div>
+        <h3>Formulir Berhasil Dikirim!</h3>
+        <p>Tanggapan Anda telah tercatat. Data investigasi KIPI akan ditinjau oleh petugas berwenang.</p>
+        <button class="btn-submit" onclick="closeModal()">Kirim Tanggapan Lain</button>
+      </div>
+    </div>
+
+    <footer class="form-footer">
+      <p>Formulir Investigasi KIPI Vaksin LSD &mdash; Dinas Peternakan dan Kesehatan Hewan</p>
+      <p class="footer-note">Formulir ini tidak mengumpulkan data pribadi yang tidak relevan dengan investigasi.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
