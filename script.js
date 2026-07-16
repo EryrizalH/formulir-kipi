@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('kipiSubmissions', JSON.stringify(history));
 
     // Optional: Send to Google Sheets via Web App URL
-    const APPS_SCRIPT_URL = ''; // Masukkan URL Web App Google Apps Script Anda di sini
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/180YPGoyxdUT6O5OJp3_9EmLLgPtX47ZOYyi0xOHf-GgNBh0TjKwf-u0J/exec'; // Ponytail: update deployment url
 
     if (APPS_SCRIPT_URL) {
       fetch(APPS_SCRIPT_URL, {
