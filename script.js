@@ -6,6 +6,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('kipiForm');
 
+  // -------- Theme Toggle --------
+  const themeToggle = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  }
+
   // -------- Scroll progress bar --------
   const progressBar = document.createElement('div');
   progressBar.className = 'progress-bar';
